@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>智慧党建AI知识助手</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">
+                <svg width="28" height="28" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="32" cy="32" r="30" fill="#C62828"/>
+                    <circle cx="32" cy="26" r="10" fill="#FFFFFF" opacity="0.9"/>
+                    <path d="M20 46c0-6.6 5.4-12 12-12s12 5.4 12 12" fill="#FFFFFF" opacity="0.9"/>
+                    <circle cx="28" cy="24" r="2" fill="#C62828"/>
+                    <circle cx="36" cy="24" r="2" fill="#C62828"/>
+                    <path d="M29 29c1.5 1 4.5 1 6 0" stroke="#C62828" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+                    <path d="M32 8l3 6h6l-5 4 2 6-6-4-6 4 2-6-5-4h6z" fill="#FFD54F"/>
+                </svg>
+            </div>
+            <h1 class="header-title">智慧党建AI知识助手</h1>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="chat-container" id="chatContainer">
+            <div class="empty-state" id="emptyState">
+                <div class="empty-icon">
+                    <svg width="48" height="48" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="32" cy="32" r="30" fill="#C62828" opacity="0.1"/>
+                        <circle cx="32" cy="32" r="30" stroke="#C62828" stroke-width="2" opacity="0.3"/>
+                        <circle cx="32" cy="26" r="10" fill="#C62828" opacity="0.6"/>
+                        <path d="M20 46c0-6.6 5.4-12 12-12s12 5.4 12 12" fill="#C62828" opacity="0.6"/>
+                    </svg>
+                </div>
+                <h2 class="empty-title">智慧党建AI知识助手</h2>
+                <p class="empty-subtitle">基于党建知识库的智能问答系统</p>
+                <div class="example-questions">
+                    <button class="example-btn" onclick="sendExample('党员有哪些义务？')">
+                        <span class="example-icon">💬</span>
+                        <span>党员有哪些义务？</span>
+                    </button>
+                    <button class="example-btn" onclick="sendExample('党的二十大报告重点是什么？')">
+                        <span class="example-icon">💬</span>
+                        <span>党的二十大报告重点是什么？</span>
+                    </button>
+                    <button class="example-btn" onclick="sendExample('入党流程有哪些步骤？')">
+                        <span class="example-icon">💬</span>
+                        <span>入党流程有哪些步骤？</span>
+                    </button>
+                    <button class="example-btn" onclick="sendExample('党建工作如何开展？')">
+                        <span class="example-icon">💬</span>
+                        <span>党建工作如何开展？</span>
+                    </button>
+                </div>
+            </div>
+            <div class="messages" id="messages"></div>
+        </div>
+    </main>
+
+    <footer class="input-area">
+        <div class="input-wrapper">
+            <div class="input-box">
+                <input
+                    type="text"
+                    id="questionInput"
+                    placeholder="输入问题，例如：党员有哪些义务？"
+                    maxlength="1000"
+                    autocomplete="off"
+                >
+                <button id="sendBtn" onclick="sendMessage()" aria-label="发送">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M22 2L11 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M22 2L15 22L11 13L2 9L22 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+            </div>
+            <p class="input-hint">AI生成内容仅供参考，请以官方文件为准</p>
+        </div>
+    </footer>
+
+    <script src="/static/js/chat.js"></script>
+</body>
+</html>
